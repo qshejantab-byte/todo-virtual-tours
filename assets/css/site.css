@@ -4498,7 +4498,7 @@ html.tour-open .dock {
    Mobile recomposes it as: headline → room → actions → plan.
    ════════════════════════════════════════════════════════════════════════ */
 .hero.hx {
-  --scene-h: clamp(600px, calc(100svh - var(--head-h) - 52px), 900px);
+  --scene-h: max(600px, calc(100svh - var(--head-h)));
   --edge: max(var(--gutter), calc((100vw - var(--wrap)) / 2 + var(--gutter)));
   display: grid;
   grid-template-columns: minmax(0, 1fr);
