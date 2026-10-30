@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/virtual-tours", "destination": "/", "permanent": true },
+    { "source": "/virtual-tours/:path*", "destination": "/:path*", "permanent": true }
+  ]
+}

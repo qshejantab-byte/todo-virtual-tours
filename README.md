@@ -6,19 +6,19 @@ Phase 1 findings are in [VIRTUAL-TOURS-AUDIT.md](VIRTUAL-TOURS-AUDIT.md).
 
 | Page | Route | Purpose |
 |---|---|---|
-| 01 Experience | `/virtual-tours/` | The ad destination. Approved hero, both CTAs, a live demo room and the value story |
-| 02 Explore | `/virtual-tours/explore/` | Walk the three-viewpoint demonstration. Client tours appear in review mode only |
-| 03 Industries | `/virtual-tours/industries/` | Seven sectors, each with its own drawing, problem, use case and CTA |
-| 04 Process | `/virtual-tours/process/` | Capture → Create → Publish → Promote: your part, our part, what you receive |
-| 05 Start a project | `/virtual-tours/start/` | The enquiry form (`?type=hotel` etc. pre-fills the property type) |
+| 01 Experience | `/` | The ad destination. Approved hero, both CTAs, a live demo room and the value story |
+| 02 Explore | `/explore/` | Walk the three-viewpoint demonstration. Client tours appear in review mode only |
+| 03 Industries | `/industries/` | Seven sectors, each with its own drawing, problem, use case and CTA |
+| 04 Process | `/process/` | Capture → Create → Publish → Promote: your part, our part, what you receive |
+| 05 Start a project | `/start/` | The enquiry form (`?type=hotel` etc. pre-fills the property type) |
 
-- **Locally:** <http://localhost/virtualtourlandingpage/virtual-tours/>
-- **Root `index.html`:** forwards to `virtual-tours/` and keeps the query string (UTMs, fbclid).
+- **Locally:** <http://localhost/virtualtourlandingpage/>
+- **Old `/virtual-tours/` URLs:** 301 to the same path at the root (see `vercel.json`); query strings are kept.
 - **No build step and no dependencies.** It runs on any static host, all paths are relative, and every page is a real, independently addressable URL.
 
 ```
-virtual-tours/index.html            01 Experience
-virtual-tours/{explore,industries,process,start}/index.html
+index.html                          01 Experience
+{explore,industries,process,start}/index.html
 assets/css/site.css                 design system: "Plan & Aperture" (all styles, motion, view transitions)
 assets/js/config.js                 ← every business decision, credential and permission lives here
 assets/js/site.js                   shared chrome: nav marker, mobile menu, reveals, dock, contact gating, attribution carry
